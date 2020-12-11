@@ -15,11 +15,16 @@
 **express를 import 하고, 실행할 변수를 만든다.**     
 
 ```
-// express를 express에 import
+// express를 express변수에 import
 const express = require('express');
-// app에 express를 담아 실행하게끔 한다.
+
+// 변수 app에 express를 담아 실행하게끔 한다.
 const app = express();
 ```   
 <br>   
 
 **package.json에 scripts 항목을 추가하여, 실행을 간단하게 한다.**    
+
+<br>
+
+----------------------------------------   
