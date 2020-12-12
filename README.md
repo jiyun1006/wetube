@@ -32,3 +32,36 @@ const app = express();
 ----------------------------------------   
 
 <br>
+
+>### 라우팅, (app.listen)   
+
+**app의 listen 메소드로 콜백함수를 담는다.**   
+
+```
+// 포트명과 리스닝이 성공했을 때 실행될 콜백 함수
+app.listen(PORT, handleListening);
+
+------함수(예시)-------
+function handleListening(){
+    console.log(`Listening on : http://localhost:${PORT}`)
+}
+```   
+
+**app.get에 쓰인 함수로 사용자가 임의의 경로로 들어왔을 때,실행될 것을 결정한다.**      
+
+**라우터안에 경로와 핸들러(함수)를 담는다.**   
+
+```
+// 경로가 '/' 인 라우터 
+app.get("/", handleHome);
+
+// 경로가 '/profile' 인 라우터
+app.get("/profile", handleProfile)
+```   
+
+<br>
+
+----------------------------------------   
+
+<br>
+
