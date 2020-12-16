@@ -94,7 +94,7 @@ app.get("/profile", handleProfile)
 ```
 "devDependencies": {
     "nodemon": "^2.0.6"
-    
+
 }
 
 ```
@@ -104,3 +104,47 @@ app.get("/profile", handleProfile)
 ----------------------------------------   
 
 <br>
+
+
+>### middleware
+
+**일반적으로 유저와 마지막 응답사이에 존재하는 것.**   
+
+**라우팅하기전 미들웨어 함수를 배치하는 경우가 많다.**   
+
+```
+---미들웨어 함수---
+
+const betweenHome = (req, res, next) => {
+    console.log("i'm between");
+    next();
+
+}
+
+---미들웨어 함수 호출---
+app.use(betweenHome);
+
+app.get("/", handleHome);
+
+app.get("/profile", handleProfile)
+```   
+
+*위와 같은 경우에는 모든 라우팅 전에 미들웨어 함수가 호출된다.*   
+
+<br>
+
+```
+app.get("/", handleHome);
+
+app.use(betweenHome);
+
+app.get("/profile", handleProfile)
+
+```   
+
+*하지만, 이번 경우에는 profile로 가기전에만 실행된다.*   
+
+**next() 메소드를 이용하여 앱의 각각 루트에 맞는 middleware를 배치.**   
+   
+
+

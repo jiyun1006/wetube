@@ -20,6 +20,16 @@ const handleHome = (req, res) => res.send("hello from home")
 // arrow function
 const handleProfile = (req, res) => res.send("You are on my profile")
 
+// middleware 함수
+const betweenHome = (req, res, next) => {
+    console.log("i'm between");
+    next();
+
+}
+
+app.use(betweenHome);
+
+
 // 경로가 '/' 인 라우터 
 app.get("/", handleHome);
 
