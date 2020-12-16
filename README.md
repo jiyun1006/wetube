@@ -153,6 +153,10 @@ app.get("/profile", handleProfile)
 **helmet -> 보안 기능 담당**   
 *(아직은 이정도만...)*   
 
+<br>
+
+># body-parser   
+
 **body-parser는 node.js의 모듈이다.**   
 
 **post 메소드의 request의 body를 편리하게 추출하게 한다.**      
