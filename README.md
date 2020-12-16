@@ -46,6 +46,7 @@ function handleListening(){
     console.log(`Listening on : http://localhost:${PORT}`)
 }
 ```   
+<br> 
 
 **app.get에 쓰인 함수로 사용자가 임의의 경로로 들어왔을 때, 실행될 것을 결정한다.**      
 
@@ -80,7 +81,8 @@ app.get("/profile", handleProfile)
     "presets" : ["@babel/preset-env"]
 
 }
-```   
+```  
+<br>  
 
 **프로젝트말고 개발환경을 위해 다운받는 패키지는 -D를 붙인다.**   
 
