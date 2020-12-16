@@ -145,6 +145,33 @@ app.get("/profile", handleProfile)
 *하지만, 이번 경우에는 profile로 가기전에만 실행된다.*   
 
 **next() 메소드를 이용하여 앱의 각각 루트에 맞는 middleware를 배치.**   
-   
+
+<br>
+
+**morgan -> logging 지원하는 미들웨어**   
+
+**helmet -> 보안 기능 담당**   
+*(아직은 이정도만...)*   
+
+**body-parser는 node.js의 모듈이다.**   
+
+**post 메소드의 request의 body를 편리하게 추출하게 한다.**      
+
+**express에는 내장되어 있으므로, import할 필요가 없음.**    
+
+*그밖에도 다양한 인코딩 기능 지원.*   
+
+```
+app.use(bodyParser.json());
+
+app.use(bodyParser.urlencoded({extended : true}));
+```   
+
+<br>
+
+----------------------------------------   
+
+<br>
+
 
 
