@@ -94,6 +94,7 @@ app.get("/profile", handleProfile)
 ```
 "devDependencies": {
     "nodemon": "^2.0.6"
+    
 }
 
 ```
