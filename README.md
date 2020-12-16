@@ -65,3 +65,39 @@ app.get("/profile", handleProfile)
 
 <br>
 
+>### babel   
+
+**ES6를 쓰고 있지만, 하위 버전에 대한 호환을 위해 사용한다.**   
+
+**.babelrc에 설정내용 저장.**   
+
+*babel preset중 env이용*   
+
+```
+.babelrc내용
+
+{
+    "presets" : ["@babel/preset-env"]
+
+}
+```   
+
+**프로젝트말고 개발환경을 위해 다운받는 패키지는 -D를 붙인다.**   
+
+**package.json의 devDependencies에서 확인 가능.**   
+
+
+*서버를 자동으로 새로고침 해주는 패키지(nodemon)*   
+
+```
+"devDependencies": {
+    "nodemon": "^2.0.6"
+}
+
+```
+
+<br>
+
+----------------------------------------   
+
+<br>

@@ -1,5 +1,8 @@
 // express를 express에 import
-const express = require('express');
+// const express = require('express');
+import express from "express";
+
+
 // app에 express를 담아 실행하게끔 한다.
 const app = express();
 
@@ -11,17 +14,11 @@ function handleListening(){
 }
 
 
-function handleHome(req, res){
-
-    res.send("hello from home")
-}
+const handleHome = (req, res) => res.send("hello from home")
 
 
-function handleProfile(req, res){
-    
-    res.send("You are on my profile")
-
-}
+// arrow function
+const handleProfile = (req, res) => res.send("You are on my profile")
 
 // 경로가 '/' 인 라우터 
 app.get("/", handleHome);
