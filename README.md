@@ -180,4 +180,42 @@ app.use(bodyParser.urlencoded({extended : true}));
 <br>
 
 
+>### Router   
+
+**route들을 쪼개서 보관하는 파일들**   
+
+**기존에 app.js 파일에 쓰였던 route들을 정리해서, Router.js로 옮겼다.**   
+
+**깔끔하게 정리가 가능하고, 가독성도 올라가는 듯 하다.**   
+
+
+```
+---Router.js---
+
+import express from "express";
+
+export const userRouter = express.Router();
+
+---route 모음--- (단순 arrow function으로 표현)
+userRouter.get("/", (req,res) => res.send('user index'));
+userRouter.get("/edit", (req,res) => res.send('user edit'));
+userRouter.get("/password", (req,res) => res.send('user password'));
+
+---app.js 에서 import 하고 쓰이는 부분---
+
+import {userRouter} from "./router";
+
+app.use("/user", userRouter);
+```   
+
+<br>
+
+----------------------------------------   
+
+<br>  
+
+
+
+
+
 

@@ -6,21 +6,16 @@ import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 
+import {userRouter} from "./router";
+
+
 // app에 express를 담아 실행하게끔 한다.
 const app = express();
-
-const PORT = 4000;
- 
-
-function handleListening(){
-    console.log(`Listening on : http://localhost:${PORT}`)
-}
-
 
 const handleHome = (req, res) => res.send("hello from home")
 
 
-// arrow function
+// // arrow function
 const handleProfile = (req, res) => res.send("You are on my profile")
 
 // middleware 함수
@@ -50,5 +45,8 @@ app.get("/", handleHome);
 // 경로가 '/profile' 인 라우터
 app.get("/profile", handleProfile)
 
-// 포트명과 리스닝이 성공했을 때 실행될 콜백 함수
-app.listen(PORT, handleListening);
+
+app.use("/user", userRouter);
+
+// 다른 파일에서 app.js를 이용할 수 있게 하는 코드
+export default app;
