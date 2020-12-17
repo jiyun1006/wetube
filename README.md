@@ -245,7 +245,9 @@ WETUBE---|
 
 <br>
 
->## MVC   
+>## MVC(Model, View, Controller)   
+
+<br>
 
 >#### Controller
 
@@ -265,14 +267,13 @@ export const userDetail = (req, res) => res.send("userDetail");
 
 **MVC패턴중 template를 담당하고 있다.**   
 
-**pug를 이용해서 template 제작.**   
-
-**기본적인 layout을 만들고 상속한다.**    
+**pug를 이용해서 template 제작. - 기본적인 layout을 만들고 상속한다.**      
 
 *<>가 아닌 들여쓰기로 구분한다.*      
 
 ```
 ---예시(main.pug -> layout용 template)---
+
 doctype html
 html
     head
