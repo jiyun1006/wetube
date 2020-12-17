@@ -8,6 +8,8 @@ import bodyParser from "body-parser";
 import videoRouter from "./routers/videoRouter"
 import userRouter from "./routers/userRouter";
 import globalRouter from "./routers/globalRouter";
+import routes from "./routes"
+
 
 // app에 express를 담아 실행하게끔 한다.
 const app = express();
@@ -20,9 +22,9 @@ app.use(helmet());
 app.use(morgan("dev"));
 
 
-app.use("/", globalRouter);
-app.use("/user", userRouter);
-app.use("/video", videoRouter);
+app.use(routes.home, globalRouter);
+app.use(routes.users, userRouter);
+app.use(routes.videos, videoRouter);
 
 
 

@@ -223,7 +223,21 @@ routers    |
            videoRouter.js 
 
 
-```   
+```    
+
+<br>
+
+**url 명칭을 정리하는 파일을 하나 만들어서 관리한다.**   
+
+```
+WETUBE  |
+         routers    |
+                    globalRouter.js (기본적인 url)
+                    userRouter.js   (user관련 url)
+                    videoRouter.js  (video관련 url)
+         routes.js (정리하는 파일)
+
+```
 
 
 
