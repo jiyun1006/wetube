@@ -214,6 +214,8 @@ app.use("/user", userRouter);
 
 **목적에 맞게 router 파일들을 만들어 보관한다.**   
 
+<br>
+
 ```
 routers    |
            globalRouter.js (기본적인 url)
