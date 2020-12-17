@@ -245,7 +245,9 @@ WETUBE---|
 
 <br>
 
->## MVC(Controller)   
+>## MVC   
+
+>#### Controller
 
 **MVC패턴중 model과 view를 이어주는 역할을 한다.(model과 view를 호출하는 함수를 담당.)**     
 
@@ -256,6 +258,43 @@ WETUBE---|
 export const users = (req, res) => res.send("Users");
 export const userDetail = (req, res) => res.send("userDetail");
 ```   
+
+<br>
+
+>#### View   
+
+**MVC패턴중 template를 담당하고 있다.**   
+
+**pug를 이용해서 template 제작.**   
+
+**기본적인 layout을 만들고 상속한다.**    
+
+*<>가 아닌 들여쓰기로 구분한다.*      
+
+```
+---예시(main.pug -> layout용 template)---
+doctype html
+html
+    head
+        title Wetube
+    body
+        header
+            h1 WeTube
+        main   
+            block content
+        footer
+            span &copy; WeTube
+
+---예시(home.put -> layout을 상속받는 template)---
+
+extends layouts/main
+
+block content
+    p Hello!
+
+```   
+
+
 
 
 
