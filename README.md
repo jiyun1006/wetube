@@ -269,6 +269,26 @@ export const userDetail = (req, res) => res.send("userDetail");
 
 **pug를 이용해서 template 제작. - 기본적인 layout을 만들고 상속한다.**      
 
+**먼저, view engine를 pug로 설정한다.**
+
+**controller 파일들에 res 메소드를 render로 바꾸고, pug 파일 이름을 쓴다.**   
+
+```
+---view engine를 pug로 설정---
+
+app.set('view engine', "pug"); 
+
+
+---render 메소드로 pug파일을 불러온다.---
+
+const videos =(req, res) => res.render("videos");
+
+```
+
+<br>
+
+
+
 *<>가 아닌 들여쓰기로 구분한다.*      
 
 ```
