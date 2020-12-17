@@ -315,6 +315,8 @@ block content
 
 ```
 
+<br>
+
 **middleware를 이용해서 전역적으로 사용하는 변수를 만든다.**   
 
 **변경사항이 있을 때, 동작 최소화**
@@ -358,6 +360,20 @@ export const localsMiddleware =  (req, res, next) => {
 span.footer__text #{siteName} #{new Date().getFullYear()} &copy; 
 
 ```
+
+<br>
+
+**controller를 통해서 template에 변수를 보낼 수 있다.**   
+
+**렌더링을 할 때, 변수를 같이 넘겨준다.**   
+
+```
+---pageTitle이라는 변수에 "Home"을 정의하고 렌더링한다.---
+
+export const home = (req, res) => res.render("home", {pageTitle : "Home"})
+```
+
+<br>
 
 
 
