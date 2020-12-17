@@ -206,7 +206,8 @@ userRouter.get("/password", (req,res) => res.send('user password'));
 import {userRouter} from "./router";
 
 app.use("/user", userRouter);
-```   
+```  
+<br>
 
 >#### Router 분리   
 
@@ -214,7 +215,6 @@ app.use("/user", userRouter);
 
 **목적에 맞게 router 파일들을 만들어 보관한다.**   
 
-<br>
 
 ```
 routers    |
