@@ -208,11 +208,23 @@ import {userRouter} from "./router";
 app.use("/user", userRouter);
 ```   
 
-<br>
+>#### Router 분리   
 
-----------------------------------------   
+**router.js 하나에 모든 router를 보관하면 지저분하다.**   
 
-<br>  
+**목적에 맞게 router 파일들을 만들어 보관한다.**   
+
+```
+routers    |
+           globalRouter.js (기본적인 url)
+           userRouter.js   (user관련 url)
+           videoRouter.js 
+
+
+```   
+
+
+
 
 
 
