@@ -313,7 +313,52 @@ extends layouts/main
 block content
     p Hello!
 
-```   
+```
+
+**middleware를 이용해서 전역적으로 사용하는 변수를 만든다.**   
+
+**변경사항이 있을 때, 동작 최소화**
+
+**middleware 이기 때문에 next()를 이용해서 다음 함수로 넘어간다.**   
+
+*함수 실행 위치를 잘 선정해야 함.*   
+
+```
+---올바른 위치---
+
+app.use(localsMiddleware);
+app.use(routes.home, globalRouter);
+app.use(routes.users, userRouter);
+app.use(routes.videos, videoRouter);
+
+---이 경우에는 home, users 라우터가 영향을 못받는다.---
+
+app.use(routes.home, globalRouter);
+app.use(routes.users, userRouter);
+app.use(localsMiddleware);
+app.use(routes.videos, videoRouter);
+```
+<br>
+
+*middleware 함수 예시*
+
+```
+---locals를 이용해서 변수를 생성---
+
+export const localsMiddleware =  (req, res, next) => {
+
+    res.locals.siteName = "WeTube";
+    res.locals.routes = routes;
+    next();
+
+};
+
+---javascript변수는 #{}안에 넣어서 pug에 사용---
+
+span.footer__text #{siteName} #{new Date().getFullYear()} &copy; 
+
+```
+
 
 
 
