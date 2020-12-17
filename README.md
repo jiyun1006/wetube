@@ -217,7 +217,7 @@ app.use("/user", userRouter);
 
 
 ```
-routers    |
+routers---|
            globalRouter.js (기본적인 url)
            userRouter.js   (user관련 url)
            videoRouter.js 
@@ -230,14 +230,32 @@ routers    |
 **url 명칭을 정리하는 파일을 하나 만들어서 관리한다.**   
 
 ```
-WETUBE  |
-         routers    |
+WETUBE---|
+         routers---|
                     globalRouter.js (기본적인 url)
                     userRouter.js   (user관련 url)
                     videoRouter.js  (video관련 url)
          routes.js (정리하는 파일)
 
 ```
+
+<br>
+
+----------------------------------------   
+
+<br>
+
+>## MVC(Controller)   
+
+**MVC패턴중 model과 view를 이어주는 역할을 한다.(model과 view를 호출하는 함수를 담당.)**     
+
+**router파일에 작성되어 있는 함수를 controller에 옮긴다.**    
+
+```
+---예시---
+export const users = (req, res) => res.send("Users");
+export const userDetail = (req, res) => res.send("userDetail");
+```   
 
 
 
