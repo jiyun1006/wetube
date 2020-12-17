@@ -1,6 +1,6 @@
 # wetube - node.js Cloning   
 
->### express 설치
+>## express 설치
 **npm init을 통해 node 프로그램을 시작하고, package.json 생성한다.**   
 <br>
 
@@ -13,7 +13,7 @@
 
 <br>
 
->### express(서버) 실행   
+>## express(서버) 실행   
 **express를 import 하고, 실행할 변수를 만든다.**     
 
 ```
@@ -33,7 +33,7 @@ const app = express();
 
 <br>
 
->### 라우팅 (app.get)   
+>## 라우팅 (app.get)   
 
 **app의 listen 메소드로 콜백함수를 담는다.**   
 
@@ -66,7 +66,7 @@ app.get("/profile", handleProfile)
 
 <br>
 
->### babel   
+>## babel   
 
 **ES6를 쓰고 있지만, 하위 버전에 대한 호환을 위해 사용한다.**   
 
@@ -106,7 +106,7 @@ app.get("/profile", handleProfile)
 <br>
 
 
->### middleware
+>## middleware
 
 **일반적으로 유저와 마지막 응답사이에 존재하는 것.**   
 
@@ -180,7 +180,7 @@ app.use(bodyParser.urlencoded({extended : true}));
 <br>
 
 
->### Router   
+>## Router   
 
 **route들을 쪼개서 보관하는 파일들**   
 
