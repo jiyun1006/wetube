@@ -261,6 +261,22 @@ export const users = (req, res) => res.send("Users");
 export const userDetail = (req, res) => res.send("userDetail");
 ```   
 
+**form 태그로 데이터 전송하기 위해선, controller 파일에 함수가 필요하다.**    
+
+**해당 라우팅 함수에서 변수를 생성해서 template에 쏴준다.**   
+
+```
+---const searchingBy = req.query.term와 동일한 코드---
+
+    const {query : {term : searchingBy}} = req;
+   
+
+   ---search.pug에 쏴주는 부분---
+
+    res.render("search", {pageTitle : "Search", searchingBy});
+```
+
+
 <br>
 
 >#### View   

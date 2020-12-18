@@ -14,7 +14,6 @@ import { localsMiddleware } from "./middlewares";
 // app에 express를 담아 실행하게끔 한다.
 const app = express();
 
-
 app.use(helmet());
 app.set('view engine', "pug");
 app.use(cookieParser());
