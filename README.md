@@ -260,6 +260,7 @@ WETUBE---|
 export const users = (req, res) => res.send("Users");
 export const userDetail = (req, res) => res.send("userDetail");
 ```   
+<
 
 **form 태그로 데이터 전송하기 위해선, controller 파일에 함수가 필요하다.**    
 
