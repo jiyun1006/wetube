@@ -284,7 +284,7 @@ export const userDetail = (req, res) => res.send("userDetail");
 
 **MVC패턴중 template를 담당하고 있다.**   
 
-**pug를 이용해서 template 제작. - 기본적인 layout을 만들고 상속한다.**      
+**pug를 이용해서 template 제작. --> 기본적인 layout을 만들고 상속한다.**      
 
 **먼저, view engine를 pug로 설정한다.**
 
