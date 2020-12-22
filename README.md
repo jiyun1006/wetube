@@ -91,6 +91,8 @@ app.get("/profile", handleProfile)
 
 *서버를 자동으로 새로고침 해주는 패키지(nodemon)*   
 
+*하위 폴더의 파일에 대해 작동을 안할 때가 있다. --> 한 폴더에 모두 묶어 관리.*
+
 ```
 "devDependencies": {
     "nodemon": "^2.0.6"
