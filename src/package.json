@@ -4,11 +4,8 @@
   "description": "Cloning Youtube with Vanila and NodeJS",
   "main": "init.js",
   "scripts": {
-  
     "start": "nodemon --exec babel-node init.js --delay 2"
   },
-
-
   "author": "jiyun",
   "license": "ISC",
   "dependencies": {
