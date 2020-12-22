@@ -1,5 +1,17 @@
 # wetube - node.js Cloning   
 
+>## error   
+
+*video재생에 관한 문제(helmet 보안문제)*   
+
+[1] app.use( helmet({ contentSecurityPolicy: false })); 로 변경
+
+[2] main.pug에 meta(http-equiv="Content-Security-Policy" content="default-src *") 추가
+
+
+<br>
+<br>
+
 >## express 설치
 **npm init을 통해 node 프로그램을 시작하고, package.json 생성한다.**   
 <br>
@@ -393,6 +405,39 @@ export const home = (req, res) => res.render("home", {pageTitle : "Home"})
 ```
 
 <br>
+
+**mixin을 이용해서 같은 구조를 가지는 데이터 표시 캡슐화.**   
+
+**mixin으로 사용할 template파일에 ``` mixin videoBlock(video = {})```**
+**을 추가하고,**   
+
+**구조화된 태그를 완성한다.**
+
+```
+---예시(mixin template)---
+
+mixin videoBlock(video = {})
+    .videoBlock 
+        video.videoBlock__thumbnail(src=video.videoFile, controls=true)
+        h4.videoBlock__title=video.title
+        h6.videoBlock__views=video.views
+```   
+
+**mixin template를 사용할 template에서 변수명을 일치시켜야 한다.**   
+
+```
+---예시---
+
+each video in videos
+            +videoBlock({
+                title: video.title,
+                views: video.views,
+                videoFile: video.videoFile
+
+            })
+
+```
+*+videoBlock의 title 변수를 videoBlock template의 video.title과 일치시켜야한다.*   
 
 
 
