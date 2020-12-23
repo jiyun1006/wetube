@@ -1,12 +1,23 @@
 # wetube - node.js Cloning   
 
->## error   
+>## Error  
 
-*video재생에 관한 문제(helmet 보안문제)*   
+<br>
+
+>#### *video재생에 관한 문제(helmet 보안문제)*   
 
 [1] app.use( helmet({ contentSecurityPolicy: false })); 로 변경
 
 [2] main.pug에 meta(http-equiv="Content-Security-Policy" content="default-src *") 추가
+
+<br>
+
+>#### *mongoDB server 실행 문제*   
+
+[1] /var/lib/mongodb의 디렉토리가 파일 생성 권한이 없고, 사용자도 다르기에 생긴 문제
+
+[2] sudo chown -R mongodb:mongodb mongodb로 권한설정 해주기.
+
 
 
 <br>
@@ -439,8 +450,31 @@ each video in videos
 ```
 *+videoBlock의 title 변수를 videoBlock template의 video.title과 일치시켜야한다.*   
 
+<br>
 
+>#### Model   
 
+**SQL과 NOSQL의 차이**   
+#### SQL   
+
+```
+[1] 정해진 데이터 스키마에 따라 데이터베이스 테이블에 데이터가 저장된다.
+
+[2] 관계를 통해서 연결된 여러개의 테이블에 분산된다.
+
+[3] 수직적 확장
+```   
+<br>
+
+#### NOSQL   
+
+```
+[1] 스키마가 없기 때문에, 다른 구조의 데이터를 추가할 수 있다.
+
+[2] 데이터베이스를 더욱 유연하게 변경할 수 있다.
+
+[3] 수평적 확장
+```
 
 
 
