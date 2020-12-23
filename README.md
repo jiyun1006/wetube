@@ -479,8 +479,24 @@ each video in videos
 [3] 수평적 확장
 ```
 
+#### mongoose   
 
+**mongoDB와 node를 이어주기 위한 adapter역할을 한다.**   
 
+**mongoose를 이용해서 mongodb를 node 프로젝트에 연결한다.**   
+
+**제일 루트 파일에다가 db.js를 import 해준다.**   
+
+<br>
+
+*연결을 위한 포트번호와 url 입력*   
+
+```
+---예시---
+
+mongoose.connect("mongodb://<url>")
+```
+<br>
 
 
 
