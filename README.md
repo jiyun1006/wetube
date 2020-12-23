@@ -277,7 +277,7 @@ WETUBE---|
 
 <br>
 
->#### Controller
+>### Controller
 
 **MVC패턴중 model과 view를 이어주는 역할을 한다.(model과 view를 호출하는 함수를 담당.)**     
 
@@ -308,7 +308,7 @@ export const userDetail = (req, res) => res.send("userDetail");
 
 <br>
 
->#### View   
+>### View   
 
 **MVC패턴중 template를 담당하고 있다.**   
 
@@ -359,6 +359,10 @@ block content
     p Hello!
 
 ```
+
+<br>
+
+>#### middleware   
 
 <br>
 
@@ -420,6 +424,10 @@ export const home = (req, res) => res.render("home", {pageTitle : "Home"})
 
 <br>
 
+>#### mixin   
+
+<br> 
+
 **mixin을 이용해서 같은 구조를 가지는 데이터 표시 캡슐화.**   
 
 **mixin으로 사용할 template파일에 ``` mixin videoBlock(video = {})```**
@@ -455,7 +463,8 @@ each video in videos
 
 <br>
 
->#### Model   
+>### Model   
+<br>
 
 **SQL과 NOSQL의 차이**   
 #### SQL   
@@ -478,8 +487,11 @@ each video in videos
 
 [3] 수평적 확장
 ```
+<br>
 
-#### mongoose   
+>#### mongoose   
+
+<br>
 
 **mongoDB와 node를 이어주기 위한 adapter역할을 한다.**   
 
