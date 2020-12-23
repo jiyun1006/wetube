@@ -510,6 +510,25 @@ mongoose.connect("mongodb://<url>")
 ```
 <br>
 
+>#### dotenv   
+
+<br>
+
+**Environment Variable을 쓰기위해 설치하는 module**   
+
+**DB의 url 대신 Environment Variable사용해서, 중요한 정보를 감추는 역할**   
+
+```
+---예시---
+
+import dotenv from "dotenv";
+dotenv.config();
+
+mongoose.connect(process.env.MONGO_URL)
+
+--> MONGO_URL 은 .env파일에 선언한 변수
+```
+
 
 
 
