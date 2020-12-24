@@ -528,6 +528,7 @@ mongoose.connect(process.env.MONGO_URL)
 
 --> MONGO_URL 은 .env파일에 선언한 변수
 ```
+<br>
 
 >#### MODEL   
 <br>
