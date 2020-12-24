@@ -574,6 +574,58 @@ comments:[
 
 <br>
 
+**multer을 이용해서 파일을 업로드 한다.**
+
+**middlewares 파일에 multer를 이용해서 업로드한 파일이 저장될 위치를 정한다.**   
+
+<br>
+
+*videos 디렉토리 안에 저장.*   
+
+```js
+const multerVideo = multer({dest:"videos/"})
+```
+<br>
+
+
+
+**업로드를 담당하는 controller에서 model에 저장할 항목을 변수로 만든다.**   
+<br>
+
+*title, description, path를 저장*   
+
+```
+const { 
+        body: {title, description },
+        file: { path }
+
+    } = req;
+```
+
+<br>
+
+**이후에, 모델을 생성하고, 정보가 저장된 변수를 이용해서 DB에 저장한다.**   
+<br>
+
+*성공적으로 받아온, 업로드 파일의 정보*   
+
+```json
+[
+  {
+    views: 0,
+    comments: [],
+    _id: 5fe46c1b89fe4e39892da7e5,
+    fileUrl: 'videos/a5415af8113463b926903fed2f4af158',
+    title: 'asd',
+    description: 'asd',
+    createdAt: 2020-12-24T10:23:23.711Z,
+    __v: 0
+  }
+]
+```
+
+
+
 
 
 
