@@ -374,7 +374,7 @@ block content
 
 *함수 실행 위치를 잘 선정해야 함.*   
 
-```
+```js
 ---올바른 위치---
 
 app.use(localsMiddleware);
@@ -393,7 +393,7 @@ app.use(routes.videos, videoRouter);
 
 *middleware 함수 예시*
 
-```
+```js
 ---locals를 이용해서 변수를 생성---
 
 export const localsMiddleware =  (req, res, next) => {
@@ -435,7 +435,7 @@ export const home = (req, res) => res.render("home", {pageTitle : "Home"})
 
 **구조화된 태그를 완성한다.**
 
-```
+```js
 ---예시(mixin template)---
 
 mixin videoBlock(video = {})
@@ -447,7 +447,7 @@ mixin videoBlock(video = {})
 
 **mixin template를 사용할 template에서 변수명을 일치시켜야 한다.**   
 
-```
+```js
 ---예시---
 
 each video in videos
@@ -503,7 +503,7 @@ each video in videos
 
 *연결을 위한 포트번호와 url 입력*   
 
-```
+```js
 ---예시---
 
 mongoose.connect("mongodb://<url>")
@@ -518,7 +518,7 @@ mongoose.connect("mongodb://<url>")
 
 **DB의 url 대신 Environment Variable사용해서, 중요한 정보를 감추는 역할**   
 
-```
+```js
 ---예시---
 
 import dotenv from "dotenv";
@@ -529,8 +529,30 @@ mongoose.connect(process.env.MONGO_URL)
 --> MONGO_URL 은 .env파일에 선언한 변수
 ```
 
+>#### MODEL   
+<br>
 
+**특정 폴더에 database의 model들을 작성한다.**   
 
+*Video의 모델 구조예시*   
+
+```js
+const VideoSchema = new mongoose.Schema({
+    fileUrl: {
+        type: String,
+        required: "File URL is required"
+    },
+    title: {
+        type: String,
+        required: "Title is required"
+    },
+    ......(생략)
+});
+```   
+
+**video 업로드할 때에, 받을 정보 (model의 정보)**
+
+<br>
 
 
 
