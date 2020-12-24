@@ -555,6 +555,26 @@ const VideoSchema = new mongoose.Schema({
 
 <br>
 
+**model구조에 comment를 추가하기 위해 새로운 js파일을 만든다.**   
+
+**그 이후에, 해당 파일을 export해주고, model 파일에서 사용한다.**   
+
+<br>
+
+```js
+---model 파일에서 사용모습---   
+
+comments:[
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref:"Comment"
+        }
+    ]
+```   
+
+<br>
+
+
 
 
 
