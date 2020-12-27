@@ -64,11 +64,11 @@ export const getEditVideo = async (req, res) => {
     const {
         params: { id }
     } = req;
-    try{
+    try {
         const video = await Video.findById(id);
-        res.render("editVideo", {pageTitle : `Edit ${video.title}`, video})
-    }catch(error){
-        res.redirect(toutes.home);
+        res.render("editVideo", { pageTitle: `Edit ${video.title}`, video })
+    } catch (error) {
+        res.redirect(routes.home);
     }
 
 }
@@ -76,13 +76,13 @@ export const getEditVideo = async (req, res) => {
 
 export const postEditVideo = async (req, res) => {
     const {
-        params : {id},
-        body : {title, description}
+        params: { id },
+        body: { title, description }
     } = req;
-    try{
-        await Video.findOneAndUpdate({ _id : id }, {title, description});
+    try {
+        await Video.findOneAndUpdate({ _id: id }, { title, description });
         res.redirect(routes.videoDetail(id));
-    }catch(error){
+    } catch (error) {
         res.redirect(routes.home);
     }
 

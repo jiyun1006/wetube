@@ -630,6 +630,46 @@ const {
 <br>
 
 
+>#### File Edit   
+<br>
+
+**업로드한 video파일들의 정보를 editVideo.pug에 보낸다.(get 메소드를 이용한다.)**   
+
+**id 값을 받아 변수로 지정하고, mongoose의 findById 메소드를 이용해서\
+ db에 저장된 값을 불러온다.**   
+
+<br>
+
+```js
+const {
+        params: { id }
+    } = req;
+    try {
+        const video = await Video.findById(id);
+```    
+<br>
+
+**editVideo 페이지에서 수정한 값으로 db를 수정해준다.**   
+
+**mongoose의 findOneAndUpdate 메소드를 이용해서 바꾼다.\
+(id값을 받을 때, id 가 아닌, _id로 받아야 한다.)**   
+
+*mongoose 모델에 id가 없다.*   
+<br>
+
+```js
+const {
+        params: { id },
+        body: { title, description }
+    } = req;
+    try {
+        await Video.findOneAndUpdate({ _id: id }, { title, description });
+```
+
+<br>
+
+
+
 
 
 
