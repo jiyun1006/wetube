@@ -5,7 +5,7 @@ import Video from "../models/Video";
 // global
 export const home = async (req, res) => {
     try {
-        const videos = await Video.find({});
+        const videos = await Video.find({}).sort({'_id' : -1});
         console.log(videos);
         res.render("home", { pageTitle: "Home", videos });
     } catch (error) {
@@ -89,7 +89,7 @@ export const postEditVideo = async (req, res) => {
 }
 
 export const deleteVideo = async (req, res) => {
-    const {
+  const {
         params: { id }
     } = req;
     try{
