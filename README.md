@@ -668,6 +668,24 @@ const {
 
 <br>
 
+**edit페이지에서 get 메소드 만으로도 delete를 구현할 수 있다.**   
+
+**mongoose의 findOneAndRemove메소드와 id 값을 이용해 file을 삭제한다.**   
+<br>
+
+```js
+const {
+        params: { id }
+    } = req;
+    try{
+        await Video.findOneAndRemove({_id : id});
+``` 
+  
+<br>
+
+
+
+
 
 
 
