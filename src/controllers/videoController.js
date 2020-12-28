@@ -5,7 +5,7 @@ import Video from "../models/Video";
 // global
 export const home = async (req, res) => {
     try {
-        const videos = await Video.find({}).sort({'_id' : -1});
+        const videos = await Video.find({}).sort({ '_id': -1 });
         console.log(videos);
         res.render("home", { pageTitle: "Home", videos });
     } catch (error) {
@@ -15,12 +15,21 @@ export const home = async (req, res) => {
     }
 }
 
-export const search = (req, res) => {
+export const search = async (req, res) => {
 
     // const searchingBy = req.query.term와 동일한 코드
     const {
         query: { term: searchingBy }
     } = req;
+    let videos = [];
+    try {
+        videos = await Video.find({
+            title: { $regex: searchingBy, $options: "i" }
+        });
+    } catch (error) {
+        console.log(error);
+    }
+
     res.render("search", { pageTitle: "Search", searchingBy, videos });
 
 }
@@ -89,12 +98,12 @@ export const postEditVideo = async (req, res) => {
 }
 
 export const deleteVideo = async (req, res) => {
-  const {
+    const {
         params: { id }
     } = req;
-    try{
-        await Video.findOneAndRemove({_id : id});
-    }catch(error){
+    try {
+        await Video.findOneAndRemove({ _id: id });
+    } catch (error) {
         res.redirect(routes.home)
     }
 
