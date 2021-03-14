@@ -4,7 +4,7 @@
 
 <br>
 
->#### *video재생에 관한 문제(helmet 보안문제)*   
+>#### *video재생에 관한 문제(helmet 보안문제에 관련.)*   
 
 [1] app.use( helmet({ contentSecurityPolicy: false })); 로 변경
 
